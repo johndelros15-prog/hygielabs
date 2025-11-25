@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HygieLabs - Premium Hygiene Products</title>
+    <link rel="stylesheet" href="styls.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1><span class="gold">Hygie</span><span class="silver">Labs</span></h1>
+            <p class="tagline">Premium Hygiene Solutions</p>
+        </div>
+        <nav>
+            <button class="cart-btn" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Experience Premium Hygiene</h2>
+        <p>Luxury hygiene products crafted for your daily comfort</p>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="category-block" id="briefs-category">
+            <h2><i class="fas fa-tshirt"></i> Premium Briefs</h2>
+            <div class="products-grid" id="briefs-products"></div>
+        </div>
+
+        <div class="category-block" id="deodorants-category">
+            <h2><i class="fas fa-spray-can"></i> Luxury Deodorants</h2>
+            <div class="products-grid" id="deodorants-products"></div>
+        </div>
+
+        <div class="category-block" id="mouthspray-category">
+            <h2><i class="fas fa-wind"></i> Men's Mouth Spray</h2>
+            <div class="products-grid" id="mouthspray-products"></div>
+        </div>
+    </section>
+
+    <!-- Product Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- Shopping Cart -->
+    <div id="cart" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" onclick="toggleCart()">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: ₱<span id="cartTotal">0.00</span></strong>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- My Orders Button -->
+    <div class="orders-button" onclick="toggleOrders()">
+        <i class="fas fa-box"></i>
+        <span>My Orders</span>
+    </div>
+
+    <!-- Orders Modal -->
+    <div id="ordersModal" class="modal">
+        <div class="modal-content orders-content">
+            <span class="close" onclick="toggleOrders()">&times;</span>
+            <h2>My Orders</h2>
+            <div id="ordersList"></div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content payment-content">
+            <h2>Payment Information</h2>
+            <form id="paymentForm">
+                <div class="payment-methods">
+                    <div class="payment-method" onclick="selectPayment('gcash')">
+                        <img src="https://logos-world.net/wp-content/uploads/2021/02/GCash-Logo.png" alt="GCash">
+                        <span>GCash</span>
+                    </div>
+                    <div class="payment-method" onclick="selectPayment('card')">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Credit/Debit Card</span>
+                    </div>
+                    <div class="payment-method" onclick="selectPayment('cod')">
+                        <i class="fas fa-money-bill"></i>
+                        <span>Cash on Delivery</span>
+                    </div>
+                </div>
+                
+                <div id="paymentDetails">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="tel" placeholder="Phone Number" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <textarea placeholder="Delivery Address" required></textarea>
+                </div>
+                
+                <button type="submit" class="pay-btn">Complete Order</button>
+                <button type="button" class="cancel-btn" onclick="closePayment()">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="Hygi.js"></script>
+</body>
+                  </html>
+      
